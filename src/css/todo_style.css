@@ -52,6 +52,10 @@ div.banner {
   transition: color 0.3s;
 }
 
+.list_item_card_description, .list_item_card_due_date, .list_item_card_completed {
+  font-size: 14pt;
+}
+
 .list_item_task_header, .list_item_due_date_header, .list_item_status_header {
   font-size: 18pt;
 }
@@ -84,7 +88,29 @@ div.banner {
   vertical-align: middle;
 }
 
+.list_modal_button {
+  background-color: darkslategray;
+  color: white;
+}
+
+.list_modal_button:hover {
+  background-color: transparent;
+  color: black;
+  transition: background-color 0.2s;
+  transition: color 0.2s;
+}
+
+#list_modal_disclaimer {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 11pt;
+}
+
 .todo-list-link:hover {
   background-color: var(--swatch-primary);
   transition: background-color 0.3s;
+}
+
+.item_prompt {
+  font-size: 15pt;
 }

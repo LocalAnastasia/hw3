@@ -79,6 +79,7 @@ input[type=password]:not(.browser-default):focus:not([readonly]) + label{
   position: absolute;
   left: 2%;
 }
+
 .list_item_task_header, .list_item_due_date_header, .list_item_status_header {
   position: absolute;
   top: 5%;
@@ -96,9 +97,6 @@ input[type=password]:not(.browser-default):focus:not([readonly]) + label{
 }
 .list_item_status_header, .list_item_card_completed, .list_item_card_not_completed {
   left: 60%;
-}
-.fixed-action-btn {
-
 }
 
 .list_item_card_toolbar_button, .btn-floating {
@@ -120,4 +118,13 @@ input[type=password]:not(.browser-default):focus:not([readonly]) + label{
 .list_item_card:hover .list_item_card_toolbar {
   opacity: 1;
   transform: translateX(-20%);
+}
+
+#item_completed {
+  display: grid;
+  grid-template-columns: 12% 88%;
+}
+
+.item_buttons {
+  float: right;
 }

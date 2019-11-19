@@ -28,7 +28,7 @@ class ItemScreen extends React.Component {
             });       
         }
     }
-    
+
     handleSubmit = e => {
         const fireStore = getFirestore();
         var newItems = JSON.parse(JSON.stringify(this.props.todoList.items));
@@ -61,7 +61,7 @@ class ItemScreen extends React.Component {
         return (
             <div id="todo_item">
                 <div id="item_heading">
-                    <span>Item</span>
+                    <h4>Item</h4>
                 </div>
                 <div id="item_form_container">
                     <span id="item_description_prompt" className="item_prompt">Description: </span>
@@ -73,17 +73,19 @@ class ItemScreen extends React.Component {
                     <span id="item_due_date_prompt" className="item_prompt">Due Date: </span>
                     <input type="date" id="due_date" className="item_input" value={this.state.due_date} onChange={this.handleChange}/>
                     <p className="item_spacing"> </p>
-                    <span id="item_completed_prompt" className="item_prompt">Completed: </span>
-                    <div>
-                        <label>
-                            <input type="checkbox" id="completed" className="item_input" checked={this.state.completed} onChange={this.handleChange}/>
-                            <span></span>
-                        </label>
+                    <div id="item_completed">
+                        <span id="item_completed_prompt" className="item_prompt">Completed: </span>
+                        <div>
+                            <label>
+                                <input type="checkbox" id="completed" className="item_input" checked={this.state.completed} onChange={this.handleChange}/>
+                                <span></span>
+                            </label>
+                        </div>
                     </div>
                 </div>
                 <div id="item_buttons_container">
-                    <button id="item_form_submit_button" className="item_buttons" onClick={this.handleSubmit}>Submit</button>
-                    <button id="item_form_cancel_button" className="item_buttons" onClick={this.handleCancel}>Cancel</button>
+                    <button id="item_form_submit_button" className="item_buttons btn waves-effect waves-teal" onClick={this.handleSubmit}>Submit</button>
+                    <button id="item_form_cancel_button" className="item_buttons btn waves-effect waves-teal" onClick={this.handleCancel}>Cancel</button>
                 </div>
             </div>
         );

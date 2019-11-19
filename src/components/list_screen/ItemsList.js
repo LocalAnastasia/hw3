@@ -12,7 +12,7 @@ class ItemsList extends React.Component {
         const todoList = this.props.todoList;
         const items = todoList.items;
         const isFirst = (id) => {
-            return id === 0
+            return id == 0
         }
         const isLast = (id) => {
             return id >= items.length - 1

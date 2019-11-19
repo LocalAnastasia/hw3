@@ -155,11 +155,12 @@ class ListScreen extends Component {
                 <div id="list_delete_modal" className="modal">
                     <div className="modal-content">
                         <h4>Delete List</h4>
-                        <p>Are you sure you want to delete this list?</p>
+                        <h6>Are you sure you want to delete this list?</h6>
+                        <p id="list_modal_disclaimer">Note: This action can not be undone.</p>
                     </div>
                     <div className="modal-footer">
-                        <Link to="/" className="modal-close waves-effect waves-green btn-flat" onClick={this.handleDeleteListAndGoHome.bind(this, todoList.id)}>Delete</Link>
-                        <div className="modal-close waves-effect waves-green btn-flat" onClick={this.handleHideModal}>Cancel</div>
+                        <Link to="/" className="btn-flat list_modal_button" onClick={this.handleDeleteListAndGoHome.bind(this, todoList.id)}>Delete</Link>
+                        <div className="btn-flat list_modal_button" onClick={this.handleHideModal}>Cancel</div>
                     </div>
                 </div>
             </div>

@@ -62,7 +62,7 @@ class ItemCard extends React.Component {
         const { item } = this.props;  
         return (
             <div className="list_item_card grey-text text-darken-3">
-                <div className="list_item_description">
+                <div className="list_item_card_description">
                     {item.description}
                 </div>
                 <div className='list_item_card_assigned_to'>
