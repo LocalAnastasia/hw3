@@ -6,16 +6,25 @@ import { firestoreConnect } from 'react-redux-firebase';
 import { Link } from 'react-router-dom';
 
 class ItemsList extends React.Component {
+
+
     render() {
         const todoList = this.props.todoList;
         const items = todoList.items;
+        const isFirst = (id) => {
+            return id === 0
+        }
+        const isLast = (id) => {
+            return id >= items.length - 1
+        }
+
         return (
             <div className="todo-lists section">
                 {items && items.map(function(item) {
                     item.id = item.key;
                     return (
                         <Link to={"/todoList/" + todoList.id + "/" + item.id}>
-                            <ItemCard todoList={todoList} item={item}/>
+                            <ItemCard todoList={todoList} items={items} item={item} isFirst={isFirst(item.id)} isLast={isLast(item.id)}/>
                         </Link>
                     );})
                 }

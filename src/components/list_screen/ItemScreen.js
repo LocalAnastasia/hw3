@@ -17,11 +17,18 @@ class ItemScreen extends React.Component {
 
     handleChange = e => {
         const { target } = e;
-        this.setState({
-            [target.id]: target.value
-        });
+        if (target.type === 'checkbox'){
+            this.setState({
+                [target.id]: target.checked
+            });
+        }
+        else{
+            this.setState({
+                [target.id]: target.value
+            });       
+        }
     }
-
+    
     handleSubmit = e => {
         const fireStore = getFirestore();
         var newItems = JSON.parse(JSON.stringify(this.props.todoList.items));
@@ -67,7 +74,12 @@ class ItemScreen extends React.Component {
                     <input type="date" id="due_date" className="item_input" value={this.state.due_date} onChange={this.handleChange}/>
                     <p className="item_spacing"> </p>
                     <span id="item_completed_prompt" className="item_prompt">Completed: </span>
-                    <input type="checkbox" id="completed" className="item_input" checked={this.state.completed} onChange={this.handleChange}/>
+                    <div>
+                        <label>
+                            <input type="checkbox" id="completed" className="item_input" checked={this.state.completed} onChange={this.handleChange}/>
+                            <span></span>
+                        </label>
+                    </div>
                 </div>
                 <div id="item_buttons_container">
                     <button id="item_form_submit_button" className="item_buttons" onClick={this.handleSubmit}>Submit</button>

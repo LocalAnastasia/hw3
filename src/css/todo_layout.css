@@ -48,8 +48,24 @@ input[type=email]:not(.browser-default):focus:not([readonly]) + label,
 input[type=password]:not(.browser-default):focus:not([readonly]) + label{
   color: #ec407a !important;
 }
+
+.list_inputs {
+  grid-template-rows: 50% 50%;
+}
 /* LIST SCREEN CLASSES */
-.list_item_card, .list_item_add_card, .list_item_header_card {
+.list_item_add_card {
+  position: relative;
+  height: 50px;
+  grid-row-gap: 0px;
+  grid-column-gap: 50px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.list_item_card, .list_item_header_card {
   position: relative;
   height: 50px;
   grid-row-gap: 0px;
@@ -80,4 +96,28 @@ input[type=password]:not(.browser-default):focus:not([readonly]) + label{
 }
 .list_item_status_header, .list_item_card_completed, .list_item_card_not_completed {
   left: 60%;
+}
+.fixed-action-btn {
+
+}
+
+.list_item_card_toolbar_button, .btn-floating {
+  margin-right: 20px;
+}
+
+.list_item_card_toolbar {
+  position: absolute;
+  left: 80%;
+  width: 15%;
+  top: 5%;
+  height: 90%;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  opacity: 0;
+  transition: all 0.5s var(--bounceEasing);
+}
+
+.list_item_card:hover .list_item_card_toolbar {
+  opacity: 1;
+  transform: translateX(-20%);
 }
